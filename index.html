@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lightning Out Test - Localhost</title>
+    <!-- ⚠ Replace with your Salesforce instance -->
+    <script src="https://orgfarm-8f3cf3fae5-dev-ed.develop.lightning.force.com/lightning/lightning.out.js"></script>
+</head>
+<body>
+    <h1>LWC: TransactionItem via Lightning Sauce Boss 02</h1>
+    <div id="lwcContainer"></div>
+
+    <script>
+    $Lightning.use("c:transactionItemWrapperApp", function () {
+    console.log("Lightning App loaded, creating component...");
+    $Lightning.createComponent(
+        "c:transactionItemWrapper",  // Component name should still be "transactionItemWrapper"
+        {},
+        "lwcContainer",
+        function (cmp) {
+            console.log("Component created:", cmp);
+        },
+        function (error) {
+            console.error("Error creating component:", error);
+        }
+    );
+}, "https://orgfarm-8f3cf3fae5-dev-ed.develop.lightning.force.com");
+
+</script>
+</body>
+</html>
